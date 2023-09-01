@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+
+  .token-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .token-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px; /* 调整为更紧凑的间距 */
+  }
+
+  .token {
+    font-weight: bold;
+    margin-right: 5px;
+  }
+
+  .rank {
+    padding: 0px;
+    border-radius: 0px;
+    color: black; /* 设置字体颜色为黑色 */
+    font-weight: bold;
+  }
+
+</style>
+    <title>Stat Prompt</title>
+</head>
+<body>
+    <ul class="token-list">
+    <span>it really depends on if you wrap it up entirely or not. if you leave it open, it&#39;s a soft taco. if it&#39;s wrapped up then it&#39;s a burrito.... </span><br>
+        <li><span>feature_name value median human_median machine_median</span></li>
+        
+        <li><span>feature_23		0.6250		0.5889		0.7167		0.5179		</span><img src="/static/lv2.png" width="20" height="20"></li>
+        
+        <li><span>feature_273		8.0000		7.8512		5.1435		9.5479		</span><img src="/static/lv2.png" width="20" height="20"></li>
+        
+        <li><span>feature_144		0.3333		0.7143		0.5000		1.0000		</span><img src="/static/lv1.png" width="20" height="20"></li>
+        
+        <li><span>feature_24		0.6562		0.4778		0.4625		0.4889		</span><img src="/static/lv4.png" width="20" height="20"></li>
+        
+        <li><span>feature_165		0.1562		0.1416		0.1571		0.1307		</span><img src="/static/lv3.png" width="20" height="20"></li>
+        
+    </ul>
+    <form method="POST" action="/quiz">
+        
+        <input type="radio" name="answer" value="human">
+        human<br>
+        
+        <input type="radio" name="answer" value="machine">
+        machine<br>
+        
+        <button type="submit">submit</button>
+    </form>
+</body>
+</html>

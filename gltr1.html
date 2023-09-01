@@ -1,0 +1,779 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+
+  .token-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .token-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px; /* 调整为更紧凑的间距 */
+  }
+
+  .token {
+    font-weight: bold;
+    margin-right: 5px;
+  }
+
+  .rank {
+    padding: 0px;
+    border-radius: 0px;
+    color: black; /* 设置字体颜色为黑色 */
+    font-weight: bold;
+  }
+
+  /* 根据不同的rank值应用不同的背景颜色 */
+  .rank-color-1 {
+    background-color: #ADFF80;
+  }
+
+  .rank-color-2 {
+    background-color: #FFEA80;
+  }
+
+  .rank-color-3 {
+    background-color: #FF9280;
+  }
+
+  .rank-color-4 {
+    background-color: #E5B0FF;
+  }
+
+</style>
+<title>GLTR Prompt</title>
+</head>
+<body>
+    <ul class="token-list">
+      <span class="rank rank-color-1">top 10</span>
+      <span class="rank rank-color-2">top 100</span>
+      <span class="rank rank-color-3">top 1000</span>
+      <span class="rank rank-color-4">others</span>
+    </ul>
+    <ul class="token-list">
+      
+        <span class="rank rank-color-1">It</span>
+      
+        <span class="rank rank-color-1">
+is</span>
+      
+        <span class="rank rank-color-1">
+not</span>
+      
+        <span class="rank rank-color-1">
+clear</span>
+      
+        <span class="rank rank-color-1">
+whether</span>
+      
+        <span class="rank rank-color-4">
+dogs</span>
+      
+        <span class="rank rank-color-1">
+have</span>
+      
+        <span class="rank rank-color-1">
+a</span>
+      
+        <span class="rank rank-color-4">
+concept</span>
+      
+        <span class="rank rank-color-1">
+of</span>
+      
+        <span class="rank rank-color-2">
+death</span>
+      
+        <span class="rank rank-color-1">
+in</span>
+      
+        <span class="rank rank-color-1">
+the</span>
+      
+        <span class="rank rank-color-1">
+same</span>
+      
+        <span class="rank rank-color-1">
+way</span>
+      
+        <span class="rank rank-color-1">
+that</span>
+      
+        <span class="rank rank-color-1">
+humans</span>
+      
+        <span class="rank rank-color-1">
+do</span>
+      
+        <span class="rank rank-color-1">.</span>
+      
+        <span class="rank rank-color-2">
+Humans</span>
+      
+        <span class="rank rank-color-1">
+have</span>
+      
+        <span class="rank rank-color-1">
+a</span>
+      
+        <span class="rank rank-color-1">
+complex</span>
+      
+        <span class="rank rank-color-1">
+understanding</span>
+      
+        <span class="rank rank-color-1">
+of</span>
+      
+        <span class="rank rank-color-1">
+death</span>
+      
+        <span class="rank rank-color-1">,</span>
+      
+        <span class="rank rank-color-1">
+including</span>
+      
+        <span class="rank rank-color-2">
+an</span>
+      
+        <span class="rank rank-color-1">
+awareness</span>
+      
+        <span class="rank rank-color-1">
+of</span>
+      
+        <span class="rank rank-color-1">
+their</span>
+      
+        <span class="rank rank-color-1">
+own</span>
+      
+        <span class="rank rank-color-1">
+mortality</span>
+      
+        <span class="rank rank-color-1">
+and</span>
+      
+        <span class="rank rank-color-1">
+the</span>
+      
+        <span class="rank rank-color-4">
+fin</span>
+      
+        <span class="rank rank-color-1">ality</span>
+      
+        <span class="rank rank-color-1">
+of</span>
+      
+        <span class="rank rank-color-1">
+death</span>
+      
+        <span class="rank rank-color-1">.</span>
+      
+        <span class="rank rank-color-1">
+Dogs</span>
+      
+        <span class="rank rank-color-1">,</span>
+      
+        <span class="rank rank-color-1">
+on</span>
+      
+        <span class="rank rank-color-1">
+the</span>
+      
+        <span class="rank rank-color-1">
+other</span>
+      
+        <span class="rank rank-color-1">
+hand</span>
+      
+        <span class="rank rank-color-1">,</span>
+      
+        <span class="rank rank-color-1">
+do</span>
+      
+        <span class="rank rank-color-1">
+not</span>
+      
+        <span class="rank rank-color-1">
+have</span>
+      
+        <span class="rank rank-color-1">
+the</span>
+      
+        <span class="rank rank-color-1">
+same</span>
+      
+        <span class="rank rank-color-2">
+level</span>
+      
+        <span class="rank rank-color-1">
+of</span>
+      
+        <span class="rank rank-color-1">
+cognitive</span>
+      
+        <span class="rank rank-color-1">
+ability</span>
+      
+        <span class="rank rank-color-1">
+and</span>
+      
+        <span class="rank rank-color-2">
+may</span>
+      
+        <span class="rank rank-color-1">
+not</span>
+      
+        <span class="rank rank-color-1">
+fully</span>
+      
+        <span class="rank rank-color-1">
+understand</span>
+      
+        <span class="rank rank-color-1">
+the</span>
+      
+        <span class="rank rank-color-1">
+concept</span>
+      
+        <span class="rank rank-color-1">
+of</span>
+      
+        <span class="rank rank-color-1">
+death</span>
+      
+        <span class="rank rank-color-1">.</span>
+      
+        <span class="rank rank-color-1">
+However</span>
+      
+        <span class="rank rank-color-1">,</span>
+      
+        <span class="rank rank-color-1">
+dogs</span>
+      
+        <span class="rank rank-color-1">
+are</span>
+      
+        <span class="rank rank-color-1">
+highly</span>
+      
+        <span class="rank rank-color-1">
+social</span>
+      
+        <span class="rank rank-color-1">
+animals</span>
+      
+        <span class="rank rank-color-1">
+and</span>
+      
+        <span class="rank rank-color-1">
+are</span>
+      
+        <span class="rank rank-color-1">
+able</span>
+      
+        <span class="rank rank-color-1">
+to</span>
+      
+        <span class="rank rank-color-2">
+form</span>
+      
+        <span class="rank rank-color-2">
+strong</span>
+      
+        <span class="rank rank-color-1">
+bonds</span>
+      
+        <span class="rank rank-color-1">
+with</span>
+      
+        <span class="rank rank-color-1">
+their</span>
+      
+        <span class="rank rank-color-1">
+owners</span>
+      
+        <span class="rank rank-color-1">
+and</span>
+      
+        <span class="rank rank-color-1">
+other</span>
+      
+        <span class="rank rank-color-1">
+animals</span>
+      
+        <span class="rank rank-color-1">.</span>
+      
+        <span class="rank rank-color-2">
+When</span>
+      
+        <span class="rank rank-color-1">
+a</span>
+      
+        <span class="rank rank-color-1">
+dog</span>
+      
+        <span class="rank rank-color-1">
+loses</span>
+      
+        <span class="rank rank-color-1">
+a</span>
+      
+        <span class="rank rank-color-1">
+companion</span>
+      
+        <span class="rank rank-color-1">,</span>
+      
+        <span class="rank rank-color-2">
+whether</span>
+      
+        <span class="rank rank-color-1">
+it</span>
+      
+        <span class="rank rank-color-1">
+is</span>
+      
+        <span class="rank rank-color-2">
+another</span>
+      
+        <span class="rank rank-color-1">
+dog</span>
+      
+        <span class="rank rank-color-1">,</span>
+      
+        <span class="rank rank-color-1">
+a</span>
+      
+        <span class="rank rank-color-1">
+human</span>
+      
+        <span class="rank rank-color-1">,</span>
+      
+        <span class="rank rank-color-1">
+or</span>
+      
+        <span class="rank rank-color-1">
+another</span>
+      
+        <span class="rank rank-color-1">
+animal</span>
+      
+        <span class="rank rank-color-1">,</span>
+      
+        <span class="rank rank-color-1">
+they</span>
+      
+        <span class="rank rank-color-1">
+may</span>
+      
+        <span class="rank rank-color-3">
+display</span>
+      
+        <span class="rank rank-color-1">
+signs</span>
+      
+        <span class="rank rank-color-1">
+of</span>
+      
+        <span class="rank rank-color-1">
+grief</span>
+      
+        <span class="rank rank-color-1">
+and</span>
+      
+        <span class="rank rank-color-1">
+loss</span>
+      
+        <span class="rank rank-color-1">,</span>
+      
+        <span class="rank rank-color-1">
+such</span>
+      
+        <span class="rank rank-color-1">
+as</span>
+      
+        <span class="rank rank-color-2">
+leth</span>
+      
+        <span class="rank rank-color-1">arg</span>
+      
+        <span class="rank rank-color-1">y</span>
+      
+        <span class="rank rank-color-1">,</span>
+      
+        <span class="rank rank-color-1">
+loss</span>
+      
+        <span class="rank rank-color-1">
+of</span>
+      
+        <span class="rank rank-color-1">
+appetite</span>
+      
+        <span class="rank rank-color-1">,</span>
+      
+        <span class="rank rank-color-1">
+and</span>
+      
+        <span class="rank rank-color-2">
+changes</span>
+      
+        <span class="rank rank-color-1">
+in</span>
+      
+        <span class="rank rank-color-1">
+behavior</span>
+      
+        <span class="rank rank-color-1">.</span>
+      
+        <span class="rank rank-color-1">
+This</span>
+      
+        <span class="rank rank-color-1">
+suggests</span>
+      
+        <span class="rank rank-color-1">
+that</span>
+      
+        <span class="rank rank-color-1">
+dogs</span>
+      
+        <span class="rank rank-color-1">
+are</span>
+      
+        <span class="rank rank-color-1">
+able</span>
+      
+        <span class="rank rank-color-1">
+to</span>
+      
+        <span class="rank rank-color-1">
+recognize</span>
+      
+        <span class="rank rank-color-1">
+that</span>
+      
+        <span class="rank rank-color-1">
+their</span>
+      
+        <span class="rank rank-color-1">
+companion</span>
+      
+        <span class="rank rank-color-1">
+is</span>
+      
+        <span class="rank rank-color-1">
+no</span>
+      
+        <span class="rank rank-color-1">
+longer</span>
+      
+        <span class="rank rank-color-2">
+present</span>
+      
+        <span class="rank rank-color-1">
+and</span>
+      
+        <span class="rank rank-color-1">
+may</span>
+      
+        <span class="rank rank-color-1">
+be</span>
+      
+        <span class="rank rank-color-1">
+able</span>
+      
+        <span class="rank rank-color-1">
+to</span>
+      
+        <span class="rank rank-color-1">
+understand</span>
+      
+        <span class="rank rank-color-1">
+that</span>
+      
+        <span class="rank rank-color-1">
+death</span>
+      
+        <span class="rank rank-color-1">
+is</span>
+      
+        <span class="rank rank-color-1">
+a</span>
+      
+        <span class="rank rank-color-2">
+permanent</span>
+      
+        <span class="rank rank-color-3">
+separation</span>
+      
+        <span class="rank rank-color-1">.</span>
+      
+        <span class="rank rank-color-1">
+It</span>
+      
+        <span class="rank rank-color-1">
+is</span>
+      
+        <span class="rank rank-color-1">
+also</span>
+      
+        <span class="rank rank-color-1">
+possible</span>
+      
+        <span class="rank rank-color-1">
+that</span>
+      
+        <span class="rank rank-color-1">
+dogs</span>
+      
+        <span class="rank rank-color-1">
+have</span>
+      
+        <span class="rank rank-color-1">
+a</span>
+      
+        <span class="rank rank-color-2">
+basic</span>
+      
+        <span class="rank rank-color-2">
+instinct</span>
+      
+        <span class="rank rank-color-1">ual</span>
+      
+        <span class="rank rank-color-1">
+understanding</span>
+      
+        <span class="rank rank-color-1">
+of</span>
+      
+        <span class="rank rank-color-1">
+death</span>
+      
+        <span class="rank rank-color-1">,</span>
+      
+        <span class="rank rank-color-1">
+as</span>
+      
+        <span class="rank rank-color-1">
+they</span>
+      
+        <span class="rank rank-color-1">
+may</span>
+      
+        <span class="rank rank-color-1">
+be</span>
+      
+        <span class="rank rank-color-1">
+more</span>
+      
+        <span class="rank rank-color-2">
+att</span>
+      
+        <span class="rank rank-color-1">uned</span>
+      
+        <span class="rank rank-color-1">
+to</span>
+      
+        <span class="rank rank-color-2">
+changes</span>
+      
+        <span class="rank rank-color-1">
+in</span>
+      
+        <span class="rank rank-color-1">
+the</span>
+      
+        <span class="rank rank-color-1">
+environment</span>
+      
+        <span class="rank rank-color-1">
+and</span>
+      
+        <span class="rank rank-color-1">
+the</span>
+      
+        <span class="rank rank-color-1">
+behavior</span>
+      
+        <span class="rank rank-color-1">
+of</span>
+      
+        <span class="rank rank-color-1">
+other</span>
+      
+        <span class="rank rank-color-1">
+animals</span>
+      
+        <span class="rank rank-color-1">,</span>
+      
+        <span class="rank rank-color-1">
+and</span>
+      
+        <span class="rank rank-color-1">
+may</span>
+      
+        <span class="rank rank-color-1">
+be</span>
+      
+        <span class="rank rank-color-1">
+able</span>
+      
+        <span class="rank rank-color-1">
+to</span>
+      
+        <span class="rank rank-color-1">
+sense</span>
+      
+        <span class="rank rank-color-1">
+when</span>
+      
+        <span class="rank rank-color-1">
+an</span>
+      
+        <span class="rank rank-color-1">
+animal</span>
+      
+        <span class="rank rank-color-1">
+is</span>
+      
+        <span class="rank rank-color-2">
+sick</span>
+      
+        <span class="rank rank-color-1">
+or</span>
+      
+        <span class="rank rank-color-1">
+injured</span>
+      
+        <span class="rank rank-color-1">.</span>
+      
+        <span class="rank rank-color-1">
+However</span>
+      
+        <span class="rank rank-color-1">,</span>
+      
+        <span class="rank rank-color-1">
+it</span>
+      
+        <span class="rank rank-color-1">
+is</span>
+      
+        <span class="rank rank-color-1">
+difficult</span>
+      
+        <span class="rank rank-color-1">
+to</span>
+      
+        <span class="rank rank-color-1">
+say</span>
+      
+        <span class="rank rank-color-1">
+for</span>
+      
+        <span class="rank rank-color-1">
+certain</span>
+      
+        <span class="rank rank-color-1">
+whether</span>
+      
+        <span class="rank rank-color-1">
+dogs</span>
+      
+        <span class="rank rank-color-1">
+have</span>
+      
+        <span class="rank rank-color-1">
+a</span>
+      
+        <span class="rank rank-color-2">
+fully</span>
+      
+        <span class="rank rank-color-1">
+developed</span>
+      
+        <span class="rank rank-color-1">
+concept</span>
+      
+        <span class="rank rank-color-1">
+of</span>
+      
+        <span class="rank rank-color-1">
+death</span>
+      
+        <span class="rank rank-color-1">,</span>
+      
+        <span class="rank rank-color-1">
+as</span>
+      
+        <span class="rank rank-color-1">
+this</span>
+      
+        <span class="rank rank-color-1">
+is</span>
+      
+        <span class="rank rank-color-1">
+a</span>
+      
+        <span class="rank rank-color-1">
+complex</span>
+      
+        <span class="rank rank-color-1">
+and</span>
+      
+        <span class="rank rank-color-3">
+abstract</span>
+      
+        <span class="rank rank-color-1">
+concept</span>
+      
+        <span class="rank rank-color-1">
+that</span>
+      
+        <span class="rank rank-color-1">
+may</span>
+      
+        <span class="rank rank-color-1">
+be</span>
+      
+        <span class="rank rank-color-3">
+beyond</span>
+      
+        <span class="rank rank-color-1">
+their</span>
+      
+        <span class="rank rank-color-2">
+cognitive</span>
+      
+        <span class="rank rank-color-1">
+abilities</span>
+      
+        <span class="rank rank-color-1">.</span>
+      
+        <span class="rank rank-color-3">
+</span>
+      
+    </ul>
+    <form method="POST" action="/quiz">
+        
+        <input type="radio" name="answer" value="human">
+        human<br>
+        
+        <input type="radio" name="answer" value="machine">
+        machine<br>
+        
+        <button type="submit">submit</button>
+    </form>
+</body>
+</html>
