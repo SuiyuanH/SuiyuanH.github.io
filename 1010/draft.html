@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Highlight Text with Predefined Schemes</title>
+<style>
+  table {
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  table, th, td {
+    border: 1px solid black;
+  }
+  th, td {
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+  }
+  .highlight {
+    background-color: yellow;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="text">one two three</div>
+    <table>
+      <tr>
+        <th id="area1">1</th>
+        <th id="area2">2</th>
+        <th id="area3">3</th>
+      </tr>
+    </table>
+  </div>
+
+  <script>
+    const text = document.querySelector('.text');
+    const area1 = document.getElementById('area1');
+    const area2 = document.getElementById('area2');
+    const area3 = document.getElementById('area3');
+
+    const schemes = [
+      { start: 2, end: 6, color: 'yellow' },
+      { start: 4, end: 6, color: 'green' },
+      { start: 8, end: 9, color: 'blue' },
+      { start: 0, end: 5, color: 'red' } // Start位置从0开始
+    ];
+
+    function highlightScheme(start, end, color) {
+      text.innerHTML = text.innerHTML.slice(0, start) +
+                       `<span class="highlight" style="background-color: ${color}">${text.innerHTML.slice(start, end)}</span>` +
+                       text.innerHTML.slice(end);
+    }
+
+    area1.addEventListener('mouseenter', () => {
+      highlightScheme(schemes[0].start, schemes[0].end, schemes[0].color);
+    });
+
+    area2.addEventListener('mouseenter', () => {
+      highlightScheme(schemes[1].start, schemes[1].end, schemes[1].color);
+      highlightScheme(schemes[2].start, schemes[2].end, schemes[2].color);
+    });
+
+    area3.addEventListener('mouseenter', () => {
+      highlightScheme(schemes[3].start, schemes[3].end, schemes[3].color);
+    });
+
+    area1.addEventListener('mouseleave', () => {
+      text.innerHTML = 'one two three';
+    });
+
+    area2.addEventListener('mouseleave', () => {
+      text.innerHTML = 'one two three';
+    });
+
+    area3.addEventListener('mouseleave', () => {
+      text.innerHTML = 'one two three';
+    });
+  </script>
+</body>
+</html>

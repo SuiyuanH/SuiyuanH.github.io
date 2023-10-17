@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Element Replacement</title>
+<style>
+  .original-element {
+    display: block; /* 初始时显示 */
+  }
+
+  .replacement-element {
+    display: none; /* 初始时隐藏 */
+  }
+</style>
+</head>
+<body>
+  <div class="original-element" id="originalElement">
+    Original Content
+  </div>
+
+  <div class="replacement-element" id="replacementElement">
+    Replacement Content
+  </div>
+
+  <script>
+    const originalElement = document.getElementById('originalElement');
+    const replacementElement = document.getElementById('replacementElement');
+
+    // 添加鼠标移入事件监听器
+    originalElement.addEventListener('mouseenter', () => {
+      originalElement.style.display = 'none'; // 隐藏原始元素
+      replacementElement.style.display = 'block'; // 显示替换元素
+    });
+
+    // 添加鼠标移出事件监听器
+    replacementElement.addEventListener('mouseleave', () => {
+      replacementElement.style.display = 'none'; // 隐藏替换元素
+      originalElement.style.display = 'block'; // 显示原始元素
+    });
+  </script>
+</body>
+</html>

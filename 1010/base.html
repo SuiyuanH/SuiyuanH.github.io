@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="statprompt_hightlight.css">
+  <title>Stat Prompt</title>
+</head>
+<body>
+    <ul class="token-list">
+    <div id="content"><span>Use VTIVX. The"Target Retirement 2045"and"Target Retirement 2045 Trust Plus"are the same underlying fund, but the latter is offered through employers. The only differences I see are the expense ratio and the minimum investment dollars. But for the purposes of comparing funds, it should be pretty close. Here is the list of all of Vanguard's target retirement funds. Also, note that the"Trust Plus"hasn't been around as long, so you don't see the returns beyond the last few years. That's another reason to use plain VTIVX for comparison. See also: Why doesn't a mutual fund in my 401(k)have a ticker symbol? </span></div><br>
+        <table>
+        <tr>
+            <th>Feature Name</th>
+            <th>Value</th>
+            <th>Human Median</th>
+            <th>Machine Median</th>
+            <th>Median</th>
+            <th>Value rank</th>
+        </tr>
+        <tr>
+            <td id="fa0">Unique words index</td>
+            <td>0.6789 ↓</td>
+            <td>0.8000 ↑</td>
+            <td>0.6304 ↓</td>
+            <td>0.6984</td>
+            <td><img src="static/lv2.png" alt="lv2" width="20" height="20"></td>
+        </tr>
+<tr>
+            <td id="fa1">Common words index 1</td>
+            <td>0.4679 ↓</td>
+            <td>0.4483 ↓</td>
+            <td>0.4904 ↑</td>
+            <td>0.4719</td>
+            <td><img src="static/lv2.png" alt="lv2" width="20" height="20"></td>
+        </tr>
+<tr>
+            <td id="fa2">Common words index 2</td>
+            <td>0.9450 ↑</td>
+            <td>0.9242 ↓</td>
+            <td>0.9450 ↑</td>
+            <td>0.9355</td>
+            <td><img src="static/lv2.png" alt="lv2" width="20" height="20"></td>
+        </tr>
+<tr>
+            <td id="fa3">Short word index 1</td>
+            <td>0.4587 ↑</td>
+            <td>0.4186 ↓</td>
+            <td>0.4194 -</td>
+            <td>0.4194</td>
+            <td><img src="static/lv3.png" alt="lv3" width="20" height="20"></td>
+        </tr>
+<tr>
+            <td id="fa4">Short word index 2</td>
+            <td>50.0000 ↑</td>
+            <td>19.0000 ↓</td>
+            <td>38.0000 ↑</td>
+            <td>30.0000</td>
+            <td><img src="static/lv4.png" alt="lv4" width="20" height="20"></td>
+        </tr>
+<tr>
+            <td id="fa5">Coordinating Conjunction index 1</td>
+            <td>0.3000 ↓</td>
+            <td>0.5000 ↓</td>
+            <td>1.0000 ↑</td>
+            <td>0.7500</td>
+            <td><img src="static/lv1.png" alt="lv1" width="20" height="20"></td>
+        </tr>
+<tr>
+            <td id="fa6">Coordinating Conjunction index 2</td>
+            <td>0.0259 ↓</td>
+            <td>0.0278 ↓</td>
+            <td>0.0417 ↑</td>
+            <td>0.0351</td>
+            <td><img src="static/lv1.png" alt="lv1" width="20" height="20"></td>
+        </tr>
+<tr>
+            <td id="fa7">Adverb index</td>
+            <td>0.1594 ↑</td>
+            <td>0.1026 ↑</td>
+            <td>0.0769 ↓</td>
+            <td>0.0882</td>
+            <td><img src="static/lv4.png" alt="lv4" width="20" height="20"></td>
+        </tr>
+<tr>
+            <td id="fa8">Verb index</td>
+            <td>1.7000 ↓</td>
+            <td>3.0000 ↓</td>
+            <td>4.3333 ↑</td>
+            <td>3.7500</td>
+            <td><img src="static/lv0.png" alt="lv0" width="20" height="20"></td>
+        </tr>
+<tr>
+            <td id="fa9">Line feed index</td>
+            <td>0.0000 -</td>
+            <td>0.0000 -</td>
+            <td>0.0000 -</td>
+            <td>0.0000</td>
+            <td><img src="static/lv4.png" alt="lv4" width="20" height="20"></td>
+        </tr>
+    </table>
+    </ul>
+    <script>
+        const text = document.querySelector('.text');
+        var areas = []
+        var base_text = document.getElementById("content")
+
+        for (let i = 0; i < 10; i++) {
+            let element = document.getElementById(`fa${i}`);
+            areas.push(element);
+        }
+
+        function exchangeText(text, new_text) {
+            var prev = text
+            text.innerHTML = new_content.innerHTML
+            return prev
+        }
+
+        function getHTMLBody(url) {
+            fetch(url)
+            .then(response => response.text())
+            .then(html => {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            const body = doc.querySelector('body');
+            return body;
+            })
+            .catch(error => {
+            console.error('Error:', error);
+            });
+        }
+
+        for (let i = 0; i < 10; i++) {
+            new_body = getHTMLBody ("0_f23_medicine_1120_human.html");
+            areas [i].addEventListener ('mouseenter', () => {
+                exchangeText (document.getElementById("content"), new_body);
+            });
+            areas [i].addEventListener ('mouseleave', () => {
+                exchangeText (document.getElementById("content"), base_text);
+            });
+        }
+      </script>
+</body>
+</html>
